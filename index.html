@@ -66,6 +66,50 @@
             background: var(--primary-light);
         }
 
+        /* Scroll to Top Button */
+        .scroll-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 50px;
+            height: 50px;
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 8px 24px rgba(30, 171, 202, 0.3);
+            border: none;
+            z-index: 98;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .scroll-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .scroll-to-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 32px rgba(30, 171, 202, 0.5);
+        }
+
+        .scroll-to-top svg {
+            width: 24px;
+            height: 24px;
+            stroke: var(--white);
+            transition: transform 0.3s ease;
+        }
+
+        .scroll-to-top:hover svg {
+            transform: translateY(-3px);
+        }
+
         /* Noise Overlay */
         body::before {
             content: '';
@@ -1272,6 +1316,18 @@
             .experience-badge .years {
                 font-size: 2.5rem;
             }
+
+            .scroll-to-top {
+                bottom: 1rem;
+                right: 1rem;
+                width: 44px;
+                height: 44px;
+            }
+
+            .scroll-to-top svg {
+                width: 20px;
+                height: 20px;
+            }
         }
 
         @media (max-width: 480px) {
@@ -1626,6 +1682,13 @@
         </div>
     </footer>
 
+    <!-- Scroll to Top Button -->
+    <button class="scroll-to-top" id="scrollToTop" aria-label="Scroll to top">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="18 15 12 9 6 15"></polyline>
+        </svg>
+    </button>
+
     <script>
         // Dynamic year
         document.getElementById('currentYear').textContent = new Date().getFullYear();
@@ -1801,6 +1864,26 @@
         }
 
         animateCounters();
+
+        // Scroll to Top Button
+        var scrollToTopBtn = document.getElementById('scrollToTop');
+
+        // Show/hide button based on scroll position
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                scrollToTopBtn.classList.add('visible');
+            } else {
+                scrollToTopBtn.classList.remove('visible');
+            }
+        });
+
+        // Scroll to top when clicked
+        scrollToTopBtn.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
     </script>
 </body>
 </html>

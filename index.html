@@ -1182,6 +1182,321 @@
             border-radius: 5px;
         }
 
+        /* Case Studies Section */
+        .case-studies {
+            background: var(--dark);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .case-studies::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--primary), transparent);
+        }
+
+        .case-studies-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .case-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .case-tab {
+            background: rgba(30, 171, 202, 0.05);
+            border: 1px solid rgba(30, 171, 202, 0.2);
+            border-radius: 50px;
+            padding: 1rem 2rem;
+            font-family: 'Outfit', sans-serif;
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--secondary);
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .case-tab:hover {
+            background: rgba(30, 171, 202, 0.1);
+            border-color: rgba(30, 171, 202, 0.4);
+            color: var(--white);
+        }
+
+        .case-tab.active {
+            background: var(--gradient-primary);
+            border-color: var(--primary);
+            color: var(--white);
+            box-shadow: 0 8px 24px rgba(30, 171, 202, 0.3);
+        }
+
+        .case-tab-duration {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.75rem;
+            background: rgba(0, 0, 0, 0.2);
+            padding: 0.25rem 0.5rem;
+            border-radius: 20px;
+            opacity: 0.8;
+        }
+
+        .case-tab.active .case-tab-duration {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .case-content-wrapper {
+            position: relative;
+            min-height: 500px;
+        }
+
+        .case-content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .case-content.active {
+            position: relative;
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .case-card {
+            background: var(--dark-card);
+            border-radius: 24px;
+            border: 1px solid rgba(30, 171, 202, 0.1);
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 0;
+        }
+
+        .case-info {
+            padding: 3rem;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            border-right: 1px solid rgba(30, 171, 202, 0.1);
+        }
+
+        .case-client {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .case-client-logo {
+            width: 70px;
+            height: 70px;
+            background: var(--gradient-primary);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--white);
+            font-family: 'Space Mono', monospace;
+        }
+
+        .case-client-details h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.25rem;
+        }
+
+        .case-client-details span {
+            color: var(--secondary);
+            font-size: 0.95rem;
+        }
+
+        .case-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .case-meta-item {
+            background: rgba(30, 171, 202, 0.08);
+            border: 1px solid rgba(30, 171, 202, 0.15);
+            border-radius: 12px;
+            padding: 1rem 1.25rem;
+            flex: 1;
+            min-width: 140px;
+        }
+
+        .case-meta-label {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.7rem;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .case-meta-value {
+            font-weight: 600;
+            font-size: 1rem;
+            color: var(--white);
+        }
+
+        .case-overview {
+            flex-grow: 1;
+        }
+
+        .case-overview h4 {
+            font-size: 1rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .case-overview p {
+            color: var(--secondary);
+            line-height: 1.8;
+            font-size: 1rem;
+        }
+
+        .case-highlights {
+            padding: 3rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background: rgba(30, 171, 202, 0.02);
+        }
+
+        .case-highlights h4 {
+            font-size: 1rem;
+            color: var(--primary);
+            margin-bottom: 2rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .highlight-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .highlight-item {
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+        }
+
+        .highlight-icon {
+            width: 28px;
+            height: 28px;
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .highlight-icon svg {
+            width: 14px;
+            height: 14px;
+            stroke: var(--white);
+        }
+
+        .highlight-text {
+            color: var(--secondary);
+            line-height: 1.7;
+            font-size: 1rem;
+        }
+
+        .highlight-text strong {
+            color: var(--white);
+            font-weight: 600;
+        }
+
+        /* Case Studies Responsive */
+        @media (max-width: 992px) {
+            .case-card {
+                grid-template-columns: 1fr;
+            }
+
+            .case-info {
+                border-right: none;
+                border-bottom: 1px solid rgba(30, 171, 202, 0.1);
+            }
+
+            .case-content-wrapper {
+                min-height: auto;
+            }
+
+            .case-tab {
+                padding: 0.85rem 1.5rem;
+                font-size: 0.95rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .case-tabs {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .case-tab {
+                justify-content: space-between;
+            }
+
+            .case-info,
+            .case-highlights {
+                padding: 2rem;
+            }
+
+            .case-meta-item {
+                min-width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .case-info,
+            .case-highlights {
+                padding: 1.5rem;
+            }
+
+            .case-client-logo {
+                width: 55px;
+                height: 55px;
+                font-size: 1.2rem;
+            }
+
+            .case-client-details h3 {
+                font-size: 1.25rem;
+            }
+
+            .highlight-list {
+                gap: 1.25rem;
+            }
+        }
+
         /* Contact Section */
         .contact {
             background: var(--dark-soft);
@@ -1778,6 +2093,7 @@
         <ul class="nav-links">
             <li><a href="#who-we-are">About</a></li>
             <li><a href="#what-we-do">Services</a></li>
+            <li><a href="#case-studies">Case Studies</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
         <a href="#contact" class="nav-cta">Get Started</a>
@@ -1792,6 +2108,7 @@
     <div class="mobile-nav" id="mobileNav">
         <a href="#who-we-are">About</a>
         <a href="#what-we-do">Services</a>
+        <a href="#case-studies">Case Studies</a>
         <a href="#contact">Contact</a>
         <a href="#contact" class="mobile-cta">Get Started</a>
     </div>
@@ -2026,6 +2343,208 @@
                     <span class="testimonial-dot active" data-index="0"></span>
                     <span class="testimonial-dot" data-index="1"></span>
                     <span class="testimonial-dot" data-index="2"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Studies Section -->
+    <section class="case-studies" id="case-studies">
+        <div class="case-studies-container">
+            <div class="section-header reveal">
+                <span class="section-label">Case Studies</span>
+                <h2 class="section-title">Proven Success Stories</h2>
+                <p class="section-subtitle">Real partnerships, real results. Explore how we've helped companies scale their development capabilities across the globe.</p>
+            </div>
+            
+            <div class="case-tabs reveal">
+                <button class="case-tab active" data-case="0">
+                    <span>ImpressM</span>
+                    <span class="case-tab-duration">19 years</span>
+                </button>
+                <button class="case-tab" data-case="1">
+                    <span>Gorilion</span>
+                    <span class="case-tab-duration">1.5 years</span>
+                </button>
+                <button class="case-tab" data-case="2">
+                    <span>Warehousing1</span>
+                    <span class="case-tab-duration">3 years</span>
+                </button>
+            </div>
+
+            <div class="case-content-wrapper reveal">
+                <!-- ImpressM -->
+                <div class="case-content active" data-case="0">
+                    <div class="case-card">
+                        <div class="case-info">
+                            <div class="case-client">
+                                <div class="case-client-logo">iM</div>
+                                <div class="case-client-details">
+                                    <h3>ImpressM</h3>
+                                    <span>New Jersey, USA</span>
+                                </div>
+                            </div>
+                            <div class="case-meta">
+                                <div class="case-meta-item">
+                                    <span class="case-meta-label">Duration</span>
+                                    <span class="case-meta-value">19 years (since 2006)</span>
+                                </div>
+                                <div class="case-meta-item">
+                                    <span class="case-meta-label">Scope</span>
+                                    <span class="case-meta-value">Web, Software & AI Dev</span>
+                                </div>
+                            </div>
+                            <div class="case-overview">
+                                <h4>Overview</h4>
+                                <p>ImpressM has partnered with BlackBox since 2006, maintaining one of the longest-running collaborations in our company's history. Over nearly two decades, we have built and maintained three dedicated teams across web, software, and AI development.</p>
+                            </div>
+                        </div>
+                        <div class="case-highlights">
+                            <h4>Highlights</h4>
+                            <ul class="highlight-list">
+                                <li class="highlight-item">
+                                    <div class="highlight-icon">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                            <polyline points="20 6 9 17 4 12"></polyline>
+                                        </svg>
+                                    </div>
+                                    <span class="highlight-text"><strong>19 years</strong> of uninterrupted collaboration.</span>
+                                </li>
+                                <li class="highlight-item">
+                                    <div class="highlight-icon">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                            <polyline points="20 6 9 17 4 12"></polyline>
+                                        </svg>
+                                    </div>
+                                    <span class="highlight-text"><strong>Three specialized teams</strong> (Custom Software, Web and AI teams) operating under ImpressM's direction.</span>
+                                </li>
+                                <li class="highlight-item">
+                                    <div class="highlight-icon">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                            <polyline points="20 6 9 17 4 12"></polyline>
+                                        </svg>
+                                    </div>
+                                    <span class="highlight-text"><strong>Exceptional developer retention:</strong> two team members with over 10 years and three with over 6 years of tenure.</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gorilion -->
+                <div class="case-content" data-case="1">
+                    <div class="case-card">
+                        <div class="case-info">
+                            <div class="case-client">
+                                <div class="case-client-logo">G</div>
+                                <div class="case-client-details">
+                                    <h3>Gorilion</h3>
+                                    <span>California, USA</span>
+                                </div>
+                            </div>
+                            <div class="case-meta">
+                                <div class="case-meta-item">
+                                    <span class="case-meta-label">Duration</span>
+                                    <span class="case-meta-value">1.5 years (ongoing)</span>
+                                </div>
+                                <div class="case-meta-item">
+                                    <span class="case-meta-label">Scope</span>
+                                    <span class="case-meta-value">WordPress & Commerce7</span>
+                                </div>
+                            </div>
+                            <div class="case-overview">
+                                <h4>Overview</h4>
+                                <p>Gorilion, a digital agency serving over 500 wineries and beverage brands, required a development partner capable of rapid WordPress delivery integrated with Commerce7. BlackBox deployed an experienced team of 2 developers who quickly embedded within their workflow, leading to an expanded engagement.</p>
+                            </div>
+                        </div>
+                        <div class="case-highlights">
+                            <h4>Highlights</h4>
+                            <ul class="highlight-list">
+                                <li class="highlight-item">
+                                    <div class="highlight-icon">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                            <polyline points="20 6 9 17 4 12"></polyline>
+                                        </svg>
+                                    </div>
+                                    <span class="highlight-text">Delivered <strong>fast, high-quality WordPress builds</strong> centered on Commerce7.</span>
+                                </li>
+                                <li class="highlight-item">
+                                    <div class="highlight-icon">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                            <polyline points="20 6 9 17 4 12"></polyline>
+                                        </svg>
+                                    </div>
+                                    <span class="highlight-text"><strong>Over 500 winery websites</strong> supported by the client's platform.</span>
+                                </li>
+                                <li class="highlight-item">
+                                    <div class="highlight-icon">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                            <polyline points="20 6 9 17 4 12"></polyline>
+                                        </svg>
+                                    </div>
+                                    <span class="highlight-text">A <strong>second developer added seamlessly</strong> within months due to strong performance and alignment.</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Warehousing1 -->
+                <div class="case-content" data-case="2">
+                    <div class="case-card">
+                        <div class="case-info">
+                            <div class="case-client">
+                                <div class="case-client-logo">W1</div>
+                                <div class="case-client-details">
+                                    <h3>Warehousing1</h3>
+                                    <span>Berlin, Germany</span>
+                                </div>
+                            </div>
+                            <div class="case-meta">
+                                <div class="case-meta-item">
+                                    <span class="case-meta-label">Duration</span>
+                                    <span class="case-meta-value">3 years (ongoing)</span>
+                                </div>
+                                <div class="case-meta-item">
+                                    <span class="case-meta-label">Scope</span>
+                                    <span class="case-meta-value">Full-Stack Web Dev</span>
+                                </div>
+                            </div>
+                            <div class="case-overview">
+                                <h4>Overview</h4>
+                                <p>Warehousing1 needed reliable, around-the-clock development coverage to support global operations across Germany and India. BlackBox provided a senior full-stack developer integrated into their distributed engineering team, ensuring 24-hour development continuity.</p>
+                            </div>
+                        </div>
+                        <div class="case-highlights">
+                            <h4>Highlights</h4>
+                            <ul class="highlight-list">
+                                <li class="highlight-item">
+                                    <div class="highlight-icon">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                            <polyline points="20 6 9 17 4 12"></polyline>
+                                        </svg>
+                                    </div>
+                                    <span class="highlight-text"><strong>24-hour timeline coverage</strong> between Europe and Asia.</span>
+                                </li>
+                                <li class="highlight-item">
+                                    <div class="highlight-icon">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                            <polyline points="20 6 9 17 4 12"></polyline>
+                                        </svg>
+                                    </div>
+                                    <span class="highlight-text"><strong>Direct collaboration</strong> with teams in Germany and India.</span>
+                                </li>
+                                <li class="highlight-item">
+                                    <div class="highlight-icon">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                            <polyline points="20 6 9 17 4 12"></polyline>
+                                        </svg>
+                                    </div>
+                                    <span class="highlight-text"><strong>Three years</strong> of consistent, high-performance partnership.</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -2439,6 +2958,30 @@
             } else if (e.key === 'ArrowRight') {
                 nextBtn.click();
             }
+        });
+
+        // Case Studies Tabs
+        var caseTabs = document.querySelectorAll('.case-tab');
+        var caseContents = document.querySelectorAll('.case-content');
+
+        caseTabs.forEach(function(tab) {
+            tab.addEventListener('click', function() {
+                var caseIndex = this.getAttribute('data-case');
+
+                // Remove active from all tabs
+                caseTabs.forEach(function(t) {
+                    t.classList.remove('active');
+                });
+
+                // Remove active from all contents
+                caseContents.forEach(function(content) {
+                    content.classList.remove('active');
+                });
+
+                // Add active to clicked tab and corresponding content
+                this.classList.add('active');
+                document.querySelector('.case-content[data-case="' + caseIndex + '"]').classList.add('active');
+            });
         });
 
         // Custom Cursor with Trail

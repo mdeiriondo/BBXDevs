@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +8,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="icon" type="image/png" href="favicon.png">
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
     <style>
         :root {
             --primary: #1eabca;
@@ -26,8 +29,8 @@
             --gradient-primary: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
             --gradient-dark: linear-gradient(180deg, var(--dark) 0%, var(--dark-soft) 100%);
             --gradient-mesh: radial-gradient(ellipse at 20% 80%, rgba(30, 171, 202, 0.15) 0%, transparent 50%),
-                            radial-gradient(ellipse at 80% 20%, rgba(0, 255, 136, 0.08) 0%, transparent 50%),
-                            radial-gradient(ellipse at 50% 50%, rgba(30, 171, 202, 0.05) 0%, transparent 70%);
+                radial-gradient(ellipse at 80% 20%, rgba(0, 255, 136, 0.08) 0%, transparent 50%),
+                radial-gradient(ellipse at 50% 50%, rgba(30, 171, 202, 0.05) 0%, transparent 70%);
         }
 
         * {
@@ -84,7 +87,13 @@
         }
 
         /* Show default cursor on interactive elements for accessibility */
-        a, button, input, textarea, select, .service-card, .testimonial-card {
+        a,
+        button,
+        input,
+        textarea,
+        select,
+        .service-card,
+        .testimonial-card {
             cursor: pointer;
         }
 
@@ -92,11 +101,12 @@
             body {
                 cursor: auto;
             }
+
             .custom-cursor,
             .cursor-trail {
                 display: none !important;
             }
-            
+
             html {
                 scroll-snap-type: none;
             }
@@ -286,7 +296,7 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
             transition: left 0.5s ease;
         }
 
@@ -382,10 +392,21 @@
             opacity: 1;
         }
 
-        .mobile-nav.active a:nth-child(1) { transition-delay: 0.1s; }
-        .mobile-nav.active a:nth-child(2) { transition-delay: 0.15s; }
-        .mobile-nav.active a:nth-child(3) { transition-delay: 0.2s; }
-        .mobile-nav.active a:nth-child(4) { transition-delay: 0.25s; }
+        .mobile-nav.active a:nth-child(1) {
+            transition-delay: 0.1s;
+        }
+
+        .mobile-nav.active a:nth-child(2) {
+            transition-delay: 0.15s;
+        }
+
+        .mobile-nav.active a:nth-child(3) {
+            transition-delay: 0.2s;
+        }
+
+        .mobile-nav.active a:nth-child(4) {
+            transition-delay: 0.25s;
+        }
 
         .mobile-nav a:hover {
             color: var(--primary);
@@ -430,7 +451,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background-image: 
+            background-image:
                 linear-gradient(rgba(30, 171, 202, 0.03) 1px, transparent 1px),
                 linear-gradient(90deg, rgba(30, 171, 202, 0.03) 1px, transparent 1px);
             background-size: 60px 60px;
@@ -450,8 +471,17 @@
         }
 
         @keyframes pulse {
-            0%, 100% { opacity: 0.5; transform: translateY(-50%) scale(1); }
-            50% { opacity: 0.8; transform: translateY(-50%) scale(1.1); }
+
+            0%,
+            100% {
+                opacity: 0.5;
+                transform: translateY(-50%) scale(1);
+            }
+
+            50% {
+                opacity: 0.8;
+                transform: translateY(-50%) scale(1.1);
+            }
         }
 
         .hero-content {
@@ -486,12 +516,22 @@
         }
 
         @keyframes blink {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.3; }
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.3;
+            }
         }
 
         @keyframes slideUp {
-            to { opacity: 1; transform: translateY(0); }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .hero h1 {
@@ -590,10 +630,98 @@
         }
 
         @keyframes float {
-            0%, 100% { transform: translateY(-50%); }
-            50% { transform: translateY(calc(-50% - 20px)); }
+
+            0%,
+            100% {
+                transform: translateY(-50%);
+            }
+
+            50% {
+                transform: translateY(calc(-50% - 20px));
+            }
         }
 
+        /* Vimeo Video Embed */
+        .hero-video-container {
+            width: 500px;
+            height: 280px;
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+        }
+
+        .hero-video-container::before {
+            content: '';
+            position: absolute;
+            inset: -2px;
+            background: linear-gradient(135deg, var(--primary), transparent, var(--primary));
+            border-radius: 18px;
+            z-index: -1;
+            opacity: 0.5;
+            animation: borderGlow 4s ease-in-out infinite;
+        }
+
+        @keyframes borderGlow {
+            0%, 100% {
+                opacity: 0.3;
+            }
+            50% {
+                opacity: 0.7;
+            }
+        }
+
+        .hero-video-container::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse at center, transparent 50%, var(--dark) 100%);
+            pointer-events: none;
+            z-index: 2;
+            opacity: 0.6;
+        }
+
+        .hero-video-wrapper {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            background: var(--dark);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 
+                0 0 60px rgba(30, 171, 202, 0.2),
+                0 0 100px rgba(30, 171, 202, 0.1),
+                inset 0 0 60px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-video-wrapper iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            opacity: 0.85;
+            mix-blend-mode: lighten;
+        }
+
+        .video-glow {
+            position: absolute;
+            inset: -50%;
+            background: radial-gradient(ellipse at center, rgba(30, 171, 202, 0.15) 0%, transparent 60%);
+            pointer-events: none;
+            z-index: -1;
+            animation: videoGlow 6s ease-in-out infinite;
+        }
+
+        @keyframes videoGlow {
+            0%, 100% {
+                transform: scale(1);
+                opacity: 0.5;
+            }
+            50% {
+                transform: scale(1.1);
+                opacity: 0.8;
+            }
+        }
+
+        /* CUBE 3D - COMMENTED OUT FOR NOW
         .cube-container {
             width: 350px;
             height: 350px;
@@ -609,8 +737,13 @@
         }
 
         @keyframes rotateCube {
-            0% { transform: rotateX(-15deg) rotateY(0deg); }
-            100% { transform: rotateX(-15deg) rotateY(360deg); }
+            0% {
+                transform: rotateX(-15deg) rotateY(0deg);
+            }
+
+            100% {
+                transform: rotateX(-15deg) rotateY(360deg);
+            }
         }
 
         .cube-face {
@@ -632,12 +765,31 @@
             opacity: 0.9;
         }
 
-        .cube-face.front { transform: translateZ(90px); }
-        .cube-face.back { transform: rotateY(180deg) translateZ(90px); }
-        .cube-face.right { transform: rotateY(90deg) translateZ(90px); }
-        .cube-face.left { transform: rotateY(-90deg) translateZ(90px); }
-        .cube-face.top { transform: rotateX(90deg) translateZ(90px); background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); }
-        .cube-face.bottom { transform: rotateX(-90deg) translateZ(90px); }
+        .cube-face.front {
+            transform: translateZ(90px);
+        }
+
+        .cube-face.back {
+            transform: rotateY(180deg) translateZ(90px);
+        }
+
+        .cube-face.right {
+            transform: rotateY(90deg) translateZ(90px);
+        }
+
+        .cube-face.left {
+            transform: rotateY(-90deg) translateZ(90px);
+        }
+
+        .cube-face.top {
+            transform: rotateX(90deg) translateZ(90px);
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+        }
+
+        .cube-face.bottom {
+            transform: rotateX(-90deg) translateZ(90px);
+        }
+        END CUBE 3D COMMENT */
 
         /* Stats Bar */
         .stats-bar {
@@ -831,9 +983,17 @@
             border-radius: 50%;
         }
 
-        .code-dot.red { background: #ff5f56; }
-        .code-dot.yellow { background: #ffbd2e; }
-        .code-dot.green { background: #27ca40; }
+        .code-dot.red {
+            background: #ff5f56;
+        }
+
+        .code-dot.yellow {
+            background: #ffbd2e;
+        }
+
+        .code-dot.green {
+            background: #27ca40;
+        }
 
         .code-body {
             padding: 2rem;
@@ -853,12 +1013,30 @@
             min-width: 30px;
         }
 
-        .code-content .keyword { color: #c792ea; }
-        .code-content .function { color: #82aaff; }
-        .code-content .string { color: #c3e88d; }
-        .code-content .variable { color: #f07178; }
-        .code-content .comment { color: #546e7a; }
-        .code-content .indent { display: inline-block; width: 2ch; }
+        .code-content .keyword {
+            color: #c792ea;
+        }
+
+        .code-content .function {
+            color: #82aaff;
+        }
+
+        .code-content .string {
+            color: #c3e88d;
+        }
+
+        .code-content .variable {
+            color: #f07178;
+        }
+
+        .code-content .comment {
+            color: #546e7a;
+        }
+
+        .code-content .indent {
+            display: inline-block;
+            width: 2ch;
+        }
 
         /* What We Do Section */
         .what-we-do {
@@ -1182,6 +1360,104 @@
             border-radius: 5px;
         }
 
+        /* Logo Carousel Section */
+        .logo-carousel {
+            background: var(--dark);
+            padding: 6rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .logo-carousel::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--primary), transparent);
+        }
+
+        .logo-carousel-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .logo-carousel-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .logo-carousel-track {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            padding: 2rem 0;
+            mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+            -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+        }
+
+        .logo-carousel-wrapper {
+            display: flex;
+            gap: 4rem;
+            will-change: transform;
+            transition: transform 0.1s linear;
+        }
+
+        .logo-item {
+            flex-shrink: 0;
+            width: 200px;
+            height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(30, 171, 202, 0.03);
+            border: 1px solid rgba(30, 171, 202, 0.1);
+            border-radius: 12px;
+            padding: 1.5rem;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .logo-item:hover {
+            background: rgba(30, 171, 202, 0.08);
+            border-color: rgba(30, 171, 202, 0.3);
+            transform: translateY(-5px);
+            box-shadow: 0 8px 24px rgba(30, 171, 202, 0.15);
+        }
+
+        .logo-item img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            filter: grayscale(100%) brightness(1.2);
+            transition: filter 0.4s ease;
+        }
+
+        .logo-item:hover img {
+            filter: grayscale(0%) brightness(1);
+        }
+
+        @media (max-width: 768px) {
+            .logo-carousel {
+                padding: 4rem 0;
+            }
+
+            .logo-carousel-header {
+                margin-bottom: 2rem;
+            }
+
+            .logo-item {
+                width: 150px;
+                height: 90px;
+                padding: 1rem;
+            }
+
+            .logo-carousel-wrapper {
+                gap: 2rem;
+            }
+        }
+
         /* Case Studies Section */
         .case-studies {
             background: var(--dark);
@@ -1477,6 +1753,7 @@
         }
 
         @media (max-width: 480px) {
+
             .case-info,
             .case-highlights {
                 padding: 1.5rem;
@@ -1730,7 +2007,14 @@
         /* ==================== */
         /* RESPONSIVE DESIGN    */
         /* ==================== */
-        
+
+        @media (max-width: 1400px) {
+            .hero-video-container {
+                width: 420px;
+                height: 236px;
+            }
+        }
+
         @media (max-width: 1200px) {
             .hero-visual {
                 display: none;
@@ -2067,12 +2351,13 @@
         }
     </style>
 </head>
+
 <body>
     <!-- Navigation -->
     <nav class="nav" id="navbar">
         <a href="#" class="logo">
             <div class="logo-icon">
-                <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <!--<svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M50 5 L95 27.5 L95 72.5 L50 95 L5 72.5 L5 27.5 Z" fill="url(#gradient-bg)" stroke="none"/>
                     <path d="M5 27.5 L50 50 L50 95 L5 72.5 Z" fill="#d0d0d0"/>
                     <path d="M95 27.5 L50 50 L50 95 L95 72.5 Z" fill="#b0b0b0"/>
@@ -2086,6 +2371,165 @@
                             <stop offset="100%" stop-color="#c0c0c0"/>
                         </linearGradient>
                     </defs>
+                </svg>-->
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="56.0934 39.084 308.6198 356.9365" width="308.6198px"
+                    height="356.9365px">
+                    <g id="object-0"
+                        transform="matrix(0.9999999999999999, 0, 0, 0.9999999999999999, 0, -1.4210854715202004e-14)">
+                        <g id="g58" transform="matrix(0.834003, 0, 0, 0.834003, 46.337662, 1.501967)">
+                            <polyline class="st1"
+                                points="209,241.5 208.5,241.2 0,361.8 190.3,472.1 209,482.4 229.6,469.9 299.9,429.3 417.1,361.8    209,241.5  "
+                                id="polyline24" style="fill:#20abcd;fill-opacity:1"
+                                transform="matrix(0.88718867,0,0,0.88718867,11.697451,45.062226)" />
+                            <linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="509.9407" y1="455.358"
+                                x2="119.4325" y2="177.83411">
+                                <stop offset="0" style="stop-color:#FFFFFF" id="stop25" />
+                                <stop offset="1" style="stop-color:#CDCCCC" id="stop26" />
+                            </linearGradient>
+                            <polygon class="st2" points="208.5,241.2 209,241.5 " id="polygon26"
+                                style="fill:url(#SVGID_2_)"
+                                transform="matrix(0.88718867,0,0,0.88718867,11.697451,45.062226)" />
+                            <polygon class="st3"
+                                points="208.5,241.2 208.5,241.2 209,240.9 209,240.9 209,0 189.9,10.2 0,120.6 0,361.8 208.5,241.2 "
+                                id="polygon28" style="fill:#cccccc"
+                                transform="matrix(0.88718867,0,0,0.88718867,11.697451,45.062226)" />
+                            <polygon class="st4"
+                                points="209,241.5 209,241.5 417.1,361.8 417.1,120.6 230,12.5 209,0 209,240.9 209.1,240.9 209.1,241.5 "
+                                id="polygon30" style="fill:#e6e6e6"
+                                transform="matrix(0.88718867,0,0,0.88718867,11.697451,45.062226)" />
+                            <linearGradient id="SVGID_5_" gradientUnits="userSpaceOnUse" x1="219.27" y1="265.5744"
+                                x2="88.0401" y2="-39.8936">
+                                <stop offset="0" style="stop-color:#FFFFFF" id="stop31" />
+                                <stop offset="1" style="stop-color:#E7E6E6" id="stop32" />
+                            </linearGradient>
+                            <polygon class="st5" points="208.5,241.2 209,240.9 " id="polygon32"
+                                style="fill:url(#SVGID_5_)"
+                                transform="matrix(0.88718867,0,0,0.88718867,11.697451,45.062226)" />
+                            <linearGradient id="SVGID_6_" gradientUnits="userSpaceOnUse" x1="509.9314" y1="455.11319"
+                                x2="119.5807" y2="177.70129">
+                                <stop offset="0" style="stop-color:#FFFFFF" id="stop33" />
+                                <stop offset="1" style="stop-color:#CDCCCC" id="stop34" />
+                            </linearGradient>
+                            <polygon class="st6" points="208.5,241.2 209,240.9 " id="polygon34"
+                                style="fill:url(#SVGID_6_)"
+                                transform="matrix(0.88718867,0,0,0.88718867,11.697451,45.062226)" />
+                            <linearGradient id="SVGID_7_" gradientUnits="userSpaceOnUse" x1="219.4294" y1="265.31879"
+                                x2="89.044197" y2="-38.182899">
+                                <stop offset="0" style="stop-color:#FFFFFF" id="stop35" />
+                                <stop offset="1" style="stop-color:#E7E6E6" id="stop36" />
+                            </linearGradient>
+                            <polygon class="st7" points="209.1,241.5 209.1,240.9 209,240.9 209,241.5 " id="polygon36"
+                                style="fill:url(#SVGID_7_)"
+                                transform="matrix(0.88718867,0,0,0.88718867,11.697451,45.062226)" />
+                            <linearGradient id="SVGID_8_" gradientUnits="userSpaceOnUse" x1="510.11359" y1="455.12701"
+                                x2="119.5976" y2="177.5976">
+                                <stop offset="0" style="stop-color:#FFFFFF" id="stop37" />
+                                <stop offset="1" style="stop-color:#CDCCCC" id="stop38" />
+                            </linearGradient>
+                            <polygon class="st8" points="209.1,241.5 209.1,240.9 209,240.9 209,241.5 " id="polygon38"
+                                style="fill:url(#SVGID_8_)"
+                                transform="matrix(0.88718867,0,0,0.88718867,11.697451,45.062226)" />
+                            <linearGradient id="SVGID_9_" gradientUnits="userSpaceOnUse" x1="219.2493" y1="265.4043"
+                                x2="88.8283" y2="-38.180698">
+                                <stop offset="0" style="stop-color:#FFFFFF" id="stop39" />
+                                <stop offset="1" style="stop-color:#E7E6E6" id="stop40" />
+                            </linearGradient>
+                            <polygon class="st9" points="209,241.5 209,240.9 208.5,241.2 " id="polygon40"
+                                style="fill:url(#SVGID_9_)"
+                                transform="matrix(0.88718867,0,0,0.88718867,11.697451,45.062226)" />
+                            <linearGradient id="SVGID_10_" gradientUnits="userSpaceOnUse" x1="510.0607" y1="455.15161"
+                                x2="119.5755" y2="177.6441">
+                                <stop offset="0" style="stop-color:#FFFFFF" id="stop41" />
+                                <stop offset="1" style="stop-color:#CDCCCC" id="stop42" />
+                            </linearGradient>
+                            <polygon class="st10" points="209,241.5 209,240.9 208.5,241.2 " id="polygon42"
+                                style="fill:url(#SVGID_10_)"
+                                transform="matrix(0.88718867,0,0,0.88718867,11.697451,45.062226)" />
+                            <linearGradient id="SVGID_11_" gradientUnits="userSpaceOnUse" x1="279.16281" y1="290.7056"
+                                x2="138.9679" y2="191.0728">
+                                <stop offset="0" style="stop-color:#FFFFFF" id="stop43" />
+                                <stop offset="1" style="stop-color:#CDCCCC" id="stop44" />
+                            </linearGradient>
+                            <rect x="209.10001" y="240.89999" class="st11" width="0" height="0.1" id="rect44"
+                                style="fill:url(#SVGID_11_)" />
+                            <linearGradient id="SVGID_12_" gradientUnits="userSpaceOnUse" x1="279.16281" y1="290.7056"
+                                x2="138.9679" y2="191.0728">
+                                <stop offset="0" style="stop-color:#FFFFFF" id="stop45" />
+                                <stop offset="1" style="stop-color:#CDCCCC" id="stop46" />
+                            </linearGradient>
+                            <rect x="209.10001" y="240.89999" class="st12" width="0" height="0.1" id="rect46"
+                                style="fill:url(#SVGID_12_)" />
+                            <linearGradient id="SVGID_13_" gradientUnits="userSpaceOnUse" x1="219.77409" y1="265.83051"
+                                x2="200.2646" y2="220.4176">
+                                <stop offset="0" style="stop-color:#FFFFFF" id="stop47" />
+                                <stop offset="1" style="stop-color:#E7E6E6" id="stop48" />
+                            </linearGradient>
+                            <rect x="209.10001" y="240.89999" class="st13" width="0" height="0.1" id="rect48"
+                                style="fill:url(#SVGID_13_)" />
+                            <linearGradient id="SVGID_14_" gradientUnits="userSpaceOnUse" x1="279.16281" y1="290.7056"
+                                x2="138.9679" y2="191.0728">
+                                <stop offset="0" style="stop-color:#FFFFFF" id="stop49" />
+                                <stop offset="1" style="stop-color:#CDCCCC" id="stop50" />
+                            </linearGradient>
+                            <rect x="209.10001" y="240.89999" class="st14" width="0" height="0.1" id="rect50"
+                                style="fill:url(#SVGID_14_)" />
+                            <linearGradient id="SVGID_15_" gradientUnits="userSpaceOnUse" x1="510.715" y1="455.3454"
+                                x2="253.63139" y2="272.64291">
+                                <stop offset="0" style="stop-color:#FFFFFF" id="stop51" />
+                                <stop offset="1" style="stop-color:#CDCCCC" id="stop52" />
+                            </linearGradient>
+                            <polygon class="st15" points="" id="polygon52" style="fill:url(#SVGID_15_)" />
+                            <linearGradient id="SVGID_16_" gradientUnits="userSpaceOnUse" x1="510.715" y1="455.3454"
+                                x2="253.63139" y2="272.64291">
+                                <stop offset="0" style="stop-color:#FFFFFF" id="stop53" />
+                                <stop offset="1" style="stop-color:#CDCCCC" id="stop54" />
+                            </linearGradient>
+                            <polygon class="st16" points="" id="polygon54" style="fill:url(#SVGID_16_)" />
+                            <linearGradient id="SVGID_17_" gradientUnits="userSpaceOnUse" x1="219.3269" y1="264.97391"
+                                x2="184.0871" y2="182.94501">
+                                <stop offset="0" style="stop-color:#FFFFFF" id="stop55" />
+                                <stop offset="1" style="stop-color:#E7E6E6" id="stop56" />
+                            </linearGradient>
+                            <polygon class="st17" points="" id="polygon56" style="fill:url(#SVGID_17_)" />
+                            <linearGradient id="SVGID_18_" gradientUnits="userSpaceOnUse" x1="510.715" y1="455.3454"
+                                x2="253.63139" y2="272.64291">
+                                <stop offset="0" style="stop-color:#FFFFFF" id="stop57" />
+                                <stop offset="1" style="stop-color:#CDCCCC" id="stop58" />
+                            </linearGradient>
+                            <polygon class="st18" points="" id="polygon58" style="fill:url(#SVGID_18_)" />
+                        </g>
+                        <g id="g66" transform="matrix(0.739918, 0, 0, 0.739918, 56.093376, -11.751131)">
+                            <linearGradient id="SVGID_19_" gradientUnits="userSpaceOnUse" x1="282.63211" y1="329.30481"
+                                x2="168.77831" y2="202.05659">
+                                <stop offset="0" style="stop-color:#4E4D4D" id="stop59" />
+                                <stop offset="1" style="stop-color:#000000" id="stop60" />
+                            </linearGradient>
+                            <polyline class="st19"
+                                points="208.5,310.5 208.5,310.5 319.2,246.5 220,189.1 208.8,182.5 198.6,187.9 97.8,246.5 208.5,310.5     "
+                                id="polyline60" style="fill:url(#SVGID_19_)" />
+                            <linearGradient id="SVGID_20_" gradientUnits="userSpaceOnUse" x1="203.44679" y1="305.0816"
+                                x2="213.6178" y2="315.93069">
+                                <stop offset="0" style="stop-color:#4E4D4D" id="stop61" />
+                                <stop offset="1" style="stop-color:#000000" id="stop62" />
+                            </linearGradient>
+                            <polygon class="st20" points="" id="polygon62" style="fill:url(#SVGID_20_)" />
+                            <linearGradient id="SVGID_21_" gradientUnits="userSpaceOnUse" x1="135.91029" y1="409.39771"
+                                x2="162.7614" y2="305.28131">
+                                <stop offset="0" style="stop-color:#4E4D4D" id="stop63" />
+                                <stop offset="1" style="stop-color:#000000" id="stop64" />
+                            </linearGradient>
+                            <polygon class="st21" points="97.8,374.5 198.9,433.1 208.5,438.4 208.5,310.5 97.8,246.5 "
+                                id="polygon64" style="fill:url(#SVGID_21_)" />
+                            <linearGradient id="SVGID_22_" gradientUnits="userSpaceOnUse" x1="307.7265" y1="432.86511"
+                                x2="241.7838" y2="296.8587">
+                                <stop offset="0" style="stop-color:#4E4D4D" id="stop65" />
+                                <stop offset="1" style="stop-color:#000000" id="stop66" />
+                            </linearGradient>
+                            <polygon class="st22"
+                                points="208.5,310.5 208.5,438.4 208.8,438.6 219.7,431.9 319.2,374.5 319.2,246.5 "
+                                id="polygon66" style="fill:url(#SVGID_22_)" />
+                        </g>
+                    </g>
                 </svg>
             </div>
             <span class="logo-text">Black<span>Box</span></span>
@@ -2126,11 +2570,13 @@
                 <span class="gradient-text">Nearshore</span><br>
                 Development Teams
             </h1>
-            <p>Scale your development capacity with elite engineers from Latin America. Seamless collaboration, exceptional results, competitive rates.</p>
+            <p>Scale your development capacity with elite engineers from Latin America. Seamless collaboration,
+                exceptional results, competitive rates.</p>
             <div class="hero-buttons">
                 <a href="#contact" class="btn-primary">
                     Start Your Project
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
                         <line x1="5" y1="12" x2="19" y2="12"></line>
                         <polyline points="12 5 19 12 12 19"></polyline>
                     </svg>
@@ -2141,6 +2587,18 @@
             </div>
         </div>
         <div class="hero-visual">
+            <!-- Vimeo Video Embed -->
+            <div class="hero-video-container">
+                <div class="video-glow"></div>
+                <div class="hero-video-wrapper">
+                    <iframe src="https://player.vimeo.com/video/219302853?h=62d50c8f25&autoplay=1&loop=1&muted=0&background=1" 
+                            allow="autoplay; fullscreen; picture-in-picture" 
+                            allowfullscreen
+                            title="BlackBox Development"></iframe>
+                </div>
+            </div>
+            
+            <!-- CUBE 3D - COMMENTED OUT FOR NOW
             <div class="cube-container">
                 <div class="cube-3d">
                     <div class="cube-face front">&lt;code/&gt;</div>
@@ -2151,6 +2609,7 @@
                     <div class="cube-face bottom"></div>
                 </div>
             </div>
+            END CUBE 3D COMMENT -->
         </div>
     </section>
 
@@ -2181,8 +2640,11 @@
         <div class="who-content">
             <div class="who-text reveal">
                 <h2>An Expert Team <span>Prepared for Success</span></h2>
-                <p>We've been offering development services globally since 2006. This equates to over 19 years of unwavering commitment to efficient communication, keeping up with evolving technologies, and collaborating with exceptional agencies, startups, and entrepreneurs.</p>
-                <p>We're capable of assisting with your projects, and we can even assemble a dedicated team that exclusively serves your company on a full-time basis.</p>
+                <p>We've been offering development services globally since 2006. This equates to over 19 years of
+                    unwavering commitment to efficient communication, keeping up with evolving technologies, and
+                    collaborating with exceptional agencies, startups, and entrepreneurs.</p>
+                <p>We're capable of assisting with your projects, and we can even assemble a dedicated team that
+                    exclusively serves your company on a full-time basis.</p>
                 <div class="experience-badge">
                     <div class="years">19+</div>
                     <div class="text">Years of delivering<br>excellence globally</div>
@@ -2198,23 +2660,28 @@
                     <div class="code-body">
                         <div class="code-line">
                             <span class="line-number">01</span>
-                            <span class="code-content"><span class="keyword">const</span> <span class="variable">team</span> = {</span>
+                            <span class="code-content"><span class="keyword">const</span> <span
+                                    class="variable">team</span> = {</span>
                         </div>
                         <div class="code-line">
                             <span class="line-number">02</span>
-                            <span class="code-content"><span class="indent"></span><span class="function">experience</span>: <span class="string">"19+ years"</span>,</span>
+                            <span class="code-content"><span class="indent"></span><span
+                                    class="function">experience</span>: <span class="string">"19+ years"</span>,</span>
                         </div>
                         <div class="code-line">
                             <span class="line-number">03</span>
-                            <span class="code-content"><span class="indent"></span><span class="function">projects</span>: <span class="string">200</span>,</span>
+                            <span class="code-content"><span class="indent"></span><span
+                                    class="function">projects</span>: <span class="string">200</span>,</span>
                         </div>
                         <div class="code-line">
                             <span class="line-number">04</span>
-                            <span class="code-content"><span class="indent"></span><span class="function">commitment</span>: <span class="string">"unwavering"</span>,</span>
+                            <span class="code-content"><span class="indent"></span><span
+                                    class="function">commitment</span>: <span class="string">"unwavering"</span>,</span>
                         </div>
                         <div class="code-line">
                             <span class="line-number">05</span>
-                            <span class="code-content"><span class="indent"></span><span class="function">timezone</span>: <span class="string">"aligned"</span></span>
+                            <span class="code-content"><span class="indent"></span><span
+                                    class="function">timezone</span>: <span class="string">"aligned"</span></span>
                         </div>
                         <div class="code-line">
                             <span class="line-number">06</span>
@@ -2230,7 +2697,8 @@
                         </div>
                         <div class="code-line">
                             <span class="line-number">09</span>
-                            <span class="code-content"><span class="variable">team</span>.<span class="function">start</span>(<span class="string">"your-project"</span>);</span>
+                            <span class="code-content"><span class="variable">team</span>.<span
+                                    class="function">start</span>(<span class="string">"your-project"</span>);</span>
                         </div>
                     </div>
                 </div>
@@ -2243,13 +2711,15 @@
         <div class="section-header reveal">
             <span class="section-label">What We Do</span>
             <h2 class="section-title">Solutions Tailored to<br>Your Needs</h2>
-            <p class="section-subtitle">From dedicated development teams to specialized staff augmentation, we provide the technical expertise your business needs to thrive.</p>
+            <p class="section-subtitle">From dedicated development teams to specialized staff augmentation, we provide
+                the technical expertise your business needs to thrive.</p>
         </div>
         <div class="services-grid">
             <div class="service-card reveal">
                 <span class="service-number">01</span>
                 <div class="service-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
                         <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
                         <circle cx="9" cy="7" r="4"></circle>
                         <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
@@ -2257,12 +2727,15 @@
                     </svg>
                 </div>
                 <h3>Dedicated Teams</h3>
-                <p>Highly proficient, autonomous, cross-functional teams for rapid technology solution delivery. Our teams are meticulously assembled to align seamlessly with your objectives and specifications, boasting extensive experience and unwavering reliability.</p>
+                <p>Highly proficient, autonomous, cross-functional teams for rapid technology solution delivery. Our
+                    teams are meticulously assembled to align seamlessly with your objectives and specifications,
+                    boasting extensive experience and unwavering reliability.</p>
             </div>
             <div class="service-card reveal">
                 <span class="service-number">02</span>
                 <div class="service-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
                         <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
                         <circle cx="9" cy="7" r="4"></circle>
                         <line x1="19" y1="8" x2="19" y2="14"></line>
@@ -2270,18 +2743,23 @@
                     </svg>
                 </div>
                 <h3>Staff Augmentation</h3>
-                <p>Enhance your development team by adding experienced technical resources in the face of the ongoing global shortage of tech talent. Our pool of expert resources is ready to join your ongoing projects with seamless integration.</p>
+                <p>Enhance your development team by adding experienced technical resources in the face of the ongoing
+                    global shortage of tech talent. Our pool of expert resources is ready to join your ongoing projects
+                    with seamless integration.</p>
             </div>
             <div class="service-card reveal">
                 <span class="service-number">03</span>
                 <div class="service-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
                         <polyline points="16 18 22 12 16 6"></polyline>
                         <polyline points="8 6 2 12 8 18"></polyline>
                     </svg>
                 </div>
                 <h3>Web Development</h3>
-                <p>We are WordPress experts with over 200 projects designed, developed, and maintained. We move fast and bring our own set of tools to help you complete projects at an affordable cost, attaching to your process seamlessly.</p>
+                <p>We are WordPress experts with over 200 projects designed, developed, and maintained. We move fast and
+                    bring our own set of tools to help you complete projects at an affordable cost, attaching to your
+                    process seamlessly.</p>
             </div>
         </div>
     </section>
@@ -2292,9 +2770,10 @@
             <div class="section-header reveal">
                 <span class="section-label">Case Studies</span>
                 <h2 class="section-title">Proven Success Stories</h2>
-                <p class="section-subtitle">Real partnerships, real results. Explore how we've helped companies scale their development capabilities across the globe.</p>
+                <p class="section-subtitle">Real partnerships, real results. Explore how we've helped companies scale
+                    their development capabilities across the globe.</p>
             </div>
-            
+
             <div class="case-tabs reveal">
                 <button class="case-tab active" data-case="0">
                     <span>ImpressM</span>
@@ -2334,7 +2813,10 @@
                             </div>
                             <div class="case-overview">
                                 <h4>Overview</h4>
-                                <p>ImpressM has partnered with BlackBox since 2006, maintaining one of the longest-running collaborations in our company's history. Over nearly two decades, we have built and maintained three dedicated teams across web, software, and AI development.</p>
+                                <p>ImpressM has partnered with BlackBox since 2006, maintaining one of the
+                                    longest-running collaborations in our company's history. Over nearly two decades, we
+                                    have built and maintained three dedicated teams across web, software, and AI
+                                    development.</p>
                             </div>
                         </div>
                         <div class="case-highlights">
@@ -2342,27 +2824,33 @@
                             <ul class="highlight-list">
                                 <li class="highlight-item">
                                     <div class="highlight-icon">
-                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                                            stroke-linecap="round" stroke-linejoin="round">
                                             <polyline points="20 6 9 17 4 12"></polyline>
                                         </svg>
                                     </div>
-                                    <span class="highlight-text"><strong>19 years</strong> of uninterrupted collaboration.</span>
+                                    <span class="highlight-text"><strong>19 years</strong> of uninterrupted
+                                        collaboration.</span>
                                 </li>
                                 <li class="highlight-item">
                                     <div class="highlight-icon">
-                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                                            stroke-linecap="round" stroke-linejoin="round">
                                             <polyline points="20 6 9 17 4 12"></polyline>
                                         </svg>
                                     </div>
-                                    <span class="highlight-text"><strong>Three specialized teams</strong> (Custom Software, Web and AI teams) operating under ImpressM's direction.</span>
+                                    <span class="highlight-text"><strong>Three specialized teams</strong> (Custom
+                                        Software, Web and AI teams) operating under ImpressM's direction.</span>
                                 </li>
                                 <li class="highlight-item">
                                     <div class="highlight-icon">
-                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                                            stroke-linecap="round" stroke-linejoin="round">
                                             <polyline points="20 6 9 17 4 12"></polyline>
                                         </svg>
                                     </div>
-                                    <span class="highlight-text"><strong>Exceptional developer retention:</strong> two team members with over 10 years and three with over 6 years of tenure.</span>
+                                    <span class="highlight-text"><strong>Exceptional developer retention:</strong> two
+                                        team members with over 10 years and three with over 6 years of tenure.</span>
                                 </li>
                             </ul>
                         </div>
@@ -2392,7 +2880,10 @@
                             </div>
                             <div class="case-overview">
                                 <h4>Overview</h4>
-                                <p>Gorilion, a digital agency serving over 500 wineries and beverage brands, required a development partner capable of rapid WordPress delivery integrated with Commerce7. BlackBox deployed an experienced team of 2 developers who quickly embedded within their workflow, leading to an expanded engagement.</p>
+                                <p>Gorilion, a digital agency serving over 500 wineries and beverage brands, required a
+                                    development partner capable of rapid WordPress delivery integrated with Commerce7.
+                                    BlackBox deployed an experienced team of 2 developers who quickly embedded within
+                                    their workflow, leading to an expanded engagement.</p>
                             </div>
                         </div>
                         <div class="case-highlights">
@@ -2400,27 +2891,33 @@
                             <ul class="highlight-list">
                                 <li class="highlight-item">
                                     <div class="highlight-icon">
-                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                                            stroke-linecap="round" stroke-linejoin="round">
                                             <polyline points="20 6 9 17 4 12"></polyline>
                                         </svg>
                                     </div>
-                                    <span class="highlight-text">Delivered <strong>fast, high-quality WordPress builds</strong> centered on Commerce7.</span>
+                                    <span class="highlight-text">Delivered <strong>fast, high-quality WordPress
+                                            builds</strong> centered on Commerce7.</span>
                                 </li>
                                 <li class="highlight-item">
                                     <div class="highlight-icon">
-                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                                            stroke-linecap="round" stroke-linejoin="round">
                                             <polyline points="20 6 9 17 4 12"></polyline>
                                         </svg>
                                     </div>
-                                    <span class="highlight-text"><strong>Over 500 winery websites</strong> supported by the client's platform.</span>
+                                    <span class="highlight-text"><strong>Over 500 winery websites</strong> supported by
+                                        the client's platform.</span>
                                 </li>
                                 <li class="highlight-item">
                                     <div class="highlight-icon">
-                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                                            stroke-linecap="round" stroke-linejoin="round">
                                             <polyline points="20 6 9 17 4 12"></polyline>
                                         </svg>
                                     </div>
-                                    <span class="highlight-text">A <strong>second developer added seamlessly</strong> within months due to strong performance and alignment.</span>
+                                    <span class="highlight-text">A <strong>second developer added seamlessly</strong>
+                                        within months due to strong performance and alignment.</span>
                                 </li>
                             </ul>
                         </div>
@@ -2450,7 +2947,10 @@
                             </div>
                             <div class="case-overview">
                                 <h4>Overview</h4>
-                                <p>Warehousing1 needed reliable, around-the-clock development coverage to support global operations across Germany and India. BlackBox provided a senior full-stack developer integrated into their distributed engineering team, ensuring 24-hour development continuity.</p>
+                                <p>Warehousing1 needed reliable, around-the-clock development coverage to support global
+                                    operations across Germany and India. BlackBox provided a senior full-stack developer
+                                    integrated into their distributed engineering team, ensuring 24-hour development
+                                    continuity.</p>
                             </div>
                         </div>
                         <div class="case-highlights">
@@ -2458,27 +2958,33 @@
                             <ul class="highlight-list">
                                 <li class="highlight-item">
                                     <div class="highlight-icon">
-                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                                            stroke-linecap="round" stroke-linejoin="round">
                                             <polyline points="20 6 9 17 4 12"></polyline>
                                         </svg>
                                     </div>
-                                    <span class="highlight-text"><strong>24-hour timeline coverage</strong> between Europe and Asia.</span>
+                                    <span class="highlight-text"><strong>24-hour timeline coverage</strong> between
+                                        Europe and Asia.</span>
                                 </li>
                                 <li class="highlight-item">
                                     <div class="highlight-icon">
-                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                                            stroke-linecap="round" stroke-linejoin="round">
                                             <polyline points="20 6 9 17 4 12"></polyline>
                                         </svg>
                                     </div>
-                                    <span class="highlight-text"><strong>Direct collaboration</strong> with teams in Germany and India.</span>
+                                    <span class="highlight-text"><strong>Direct collaboration</strong> with teams in
+                                        Germany and India.</span>
                                 </li>
                                 <li class="highlight-item">
                                     <div class="highlight-icon">
-                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                                            stroke-linecap="round" stroke-linejoin="round">
                                             <polyline points="20 6 9 17 4 12"></polyline>
                                         </svg>
                                     </div>
-                                    <span class="highlight-text"><strong>Three years</strong> of consistent, high-performance partnership.</span>
+                                    <span class="highlight-text"><strong>Three years</strong> of consistent,
+                                        high-performance partnership.</span>
                                 </li>
                             </ul>
                         </div>
@@ -2494,12 +3000,17 @@
             <div class="section-header testimonials-header reveal">
                 <span class="section-label">Testimonials</span>
                 <h2 class="section-title">Words from Happy Clients</h2>
-                <p class="section-subtitle">Don't just take our word for it. Here's what our clients have to say about working with BlackBox.</p>
+                <p class="section-subtitle">Don't just take our word for it. Here's what our clients have to say about
+                    working with BlackBox.</p>
             </div>
             <div class="testimonials-slider">
                 <div class="testimonials-wrapper">
                     <div class="testimonial-card active" data-index="0">
-                        <p class="testimonial-text">"While working as Project Manager for a Web design company for two years, we utilized the services of Alvaro's company, BlackBox, on a number of different occasions to help complete a project in record time. His staff was knowledgeable and extremely helpful and polite. Alvaro was a terrific partner and helped us immensely to meet our deadlines and to complete the projects with quality and efficiency."</p>
+                        <p class="testimonial-text">"While working as Project Manager for a Web design company for two
+                            years, we utilized the services of Alvaro's company, BlackBox, on a number of different
+                            occasions to help complete a project in record time. His staff was knowledgeable and
+                            extremely helpful and polite. Alvaro was a terrific partner and helped us immensely to meet
+                            our deadlines and to complete the projects with quality and efficiency."</p>
                         <div class="testimonial-author">
                             <div class="author-avatar">PD</div>
                             <div class="author-info">
@@ -2509,7 +3020,10 @@
                         </div>
                     </div>
                     <div class="testimonial-card next" data-index="1">
-                        <p class="testimonial-text">"We started working with Alvaro and BlackBox in 2005! He put together a team that built hundreds of projects for impressM, and still works with us to this day. Our team at BlackBox grew from one developer to over 10 fulltime resources and our hope is to continue our long term partnership with great success."</p>
+                        <p class="testimonial-text">"We started working with Alvaro and BlackBox in 2005! He put
+                            together a team that built hundreds of projects for impressM, and still works with us to
+                            this day. Our team at BlackBox grew from one developer to over 10 fulltime resources and our
+                            hope is to continue our long term partnership with great success."</p>
                         <div class="testimonial-author">
                             <div class="author-avatar">HV</div>
                             <div class="author-info">
@@ -2519,7 +3033,11 @@
                         </div>
                     </div>
                     <div class="testimonial-card prev" data-index="2">
-                        <p class="testimonial-text">"I've worked with Alvaro over the course of the last five years. I have consistently been deeply satisfied with the work delivered by him, and the teams he has expertly assembled. When it comes to online development and project management, you need not look beyond Alvaro. Feel free to ask him how you can follow up with me via email or phone if you have any questions."</p>
+                        <p class="testimonial-text">"I've worked with Alvaro over the course of the last five years. I
+                            have consistently been deeply satisfied with the work delivered by him, and the teams he has
+                            expertly assembled. When it comes to online development and project management, you need not
+                            look beyond Alvaro. Feel free to ask him how you can follow up with me via email or phone if
+                            you have any questions."</p>
                         <div class="testimonial-author">
                             <div class="author-avatar">AM</div>
                             <div class="author-info">
@@ -2531,12 +3049,14 @@
                 </div>
                 <div class="testimonials-controls">
                     <button class="testimonial-nav" id="prevTestimonial" aria-label="Previous testimonial">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
                             <polyline points="15 18 9 12 15 6"></polyline>
                         </svg>
                     </button>
                     <button class="testimonial-nav" id="nextTestimonial" aria-label="Next testimonial">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
                             <polyline points="9 18 15 12 9 6"></polyline>
                         </svg>
                     </button>
@@ -2550,26 +3070,84 @@
         </div>
     </section>
 
+    <!-- Logo Carousel Section -->
+    <section class="logo-carousel" id="logo-carousel">
+        <div class="logo-carousel-container">
+            <div class="section-header logo-carousel-header reveal">
+                <span class="section-label">Trusted By</span>
+                <h2 class="section-title">Companies We've Worked With</h2>
+            </div>
+            <div class="logo-carousel-track">
+                <div class="logo-carousel-wrapper" id="logoCarousel">
+                    <!-- First set of logos -->
+                    <div class="logo-item">
+                        <img src="assets/logos/1.png" alt="Client Logo 1">
+                    </div>
+                    <div class="logo-item">
+                        <img src="assets/logos/2.png" alt="Client Logo 2">
+                    </div>
+                    <div class="logo-item">
+                        <img src="assets/logos/3.png" alt="Client Logo 3">
+                    </div>
+                    <div class="logo-item">
+                        <img src="assets/logos/4.png" alt="Client Logo 4">
+                    </div>
+                    <div class="logo-item">
+                        <img src="assets/logos/5.png" alt="Client Logo 5">
+                    </div>
+                    <div class="logo-item">
+                        <img src="assets/logos/6.png" alt="Client Logo 6">
+                    </div>
+                    <!-- Duplicate set for infinite loop -->
+                    <div class="logo-item">
+                        <img src="assets/logos/1.png" alt="Client Logo 1">
+                    </div>
+                    <div class="logo-item">
+                        <img src="assets/logos/2.png" alt="Client Logo 2">
+                    </div>
+                    <div class="logo-item">
+                        <img src="assets/logos/3.png" alt="Client Logo 3">
+                    </div>
+                    <div class="logo-item">
+                        <img src="assets/logos/4.png" alt="Client Logo 4">
+                    </div>
+                    <div class="logo-item">
+                        <img src="assets/logos/5.png" alt="Client Logo 5">
+                    </div>
+                    <div class="logo-item">
+                        <img src="assets/logos/6.png" alt="Client Logo 6">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Contact Section -->
     <section class="contact" id="contact">
         <div class="contact-container">
             <div class="contact-content reveal">
                 <div class="contact-text">
                     <h2>Ready to <span>Scale Your Team?</span></h2>
-                    <p>Get a quote to put our team to work for you now! Let's discuss how we can help accelerate your development and bring your vision to life.</p>
+                    <p>Get a quote to put our team to work for you now! Let's discuss how we can help accelerate your
+                        development and bring your vision to life.</p>
                     <div class="contact-info">
                         <div class="contact-item">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                                </path>
                                 <polyline points="22,6 12,13 2,6"></polyline>
                             </svg>
                             <span>info@bbxdevs.com</span>
                         </div>
                         <div class="contact-item">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
                                 <circle cx="12" cy="12" r="10"></circle>
                                 <line x1="2" y1="12" x2="22" y2="12"></line>
-                                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                                <path
+                                    d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
+                                </path>
                             </svg>
                             <span>Remote-first, Global Delivery</span>
                         </div>
@@ -2578,14 +3156,14 @@
                 <form class="contact-form" id="contactForm" action="https://api.web3forms.com/submit" method="POST">
                     <!-- Access Key de Web3Forms -->
                     <input type="hidden" name="access_key" value="f2f14909-0a12-4766-8149-4e2127a7a65a">
-                    
+
                     <!-- Redirect opcional después del envío -->
                     <input type="hidden" name="redirect" value="https://web3forms.com/success">
-                    
+
                     <!-- Configuración adicional -->
                     <input type="hidden" name="subject" value="New Contact Form Submission from BlackBox Website">
                     <input type="hidden" name="from_name" value="BlackBox Contact Form">
-                    
+
                     <div class="form-row">
                         <div class="form-group">
                             <input type="text" name="name" placeholder="Your Name" required>
@@ -2600,20 +3178,23 @@
                     <div class="form-group">
                         <textarea name="message" placeholder="Tell us about your project..." required></textarea>
                     </div>
-                    
+
                     <!-- Honeypot para evitar spam -->
                     <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
-                    
+
                     <button type="submit" class="submit-btn" id="submitBtn">
                         <span class="btn-text">Get Your Quote</span>
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <line x1="5" y1="12" x2="19" y2="12"></line>
                             <polyline points="12 5 19 12 12 19"></polyline>
                         </svg>
                     </button>
-                    
+
                     <!-- Mensaje de éxito/error -->
-                    <div id="formMessage" style="display: none; margin-top: 1rem; padding: 1rem; border-radius: 8px; text-align: center;"></div>
+                    <div id="formMessage"
+                        style="display: none; margin-top: 1rem; padding: 1rem; border-radius: 8px; text-align: center;">
+                    </div>
                 </form>
             </div>
         </div>
@@ -2624,17 +3205,19 @@
         <div class="footer-content">
             <div class="footer-logo">
                 <svg width="40" height="40" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M50 5 L95 27.5 L95 72.5 L50 95 L5 72.5 L5 27.5 Z" fill="url(#footer-gradient-bg)" stroke="none"/>
-                    <path d="M5 27.5 L50 50 L50 95 L5 72.5 Z" fill="#d0d0d0"/>
-                    <path d="M95 27.5 L50 50 L50 95 L95 72.5 Z" fill="#b0b0b0"/>
-                    <path d="M20 75 L50 60 L80 75 L50 90 Z" fill="#1eabca"/>
-                    <path d="M35 55 L50 47 L65 55 L50 63 Z" fill="#1a1a1a"/>
-                    <path d="M35 55 L50 63 L50 78 L35 70 Z" fill="#0a0a0a"/>
-                    <path d="M65 55 L50 63 L50 78 L65 70 Z" fill="#050505"/>
+                    <path d="M50 5 L95 27.5 L95 72.5 L50 95 L5 72.5 L5 27.5 Z" fill="url(#footer-gradient-bg)"
+                        stroke="none" />
+                    <path d="M5 27.5 L50 50 L50 95 L5 72.5 Z" fill="#d0d0d0" />
+                    <path d="M95 27.5 L50 50 L50 95 L95 72.5 Z" fill="#b0b0b0" />
+                    <path d="M20 75 L50 60 L80 75 L50 90 Z" fill="#1eabca" />
+                    <path d="M35 55 L50 47 L65 55 L50 63 Z" fill="#1a1a1a" />
+                    <path d="M35 55 L50 63 L50 78 L35 70 Z" fill="#0a0a0a" />
+                    <path d="M65 55 L50 63 L50 78 L65 70 Z" fill="#050505" />
                     <defs>
-                        <linearGradient id="footer-gradient-bg" x1="50" y1="5" x2="50" y2="95" gradientUnits="userSpaceOnUse">
-                            <stop offset="0%" stop-color="#e8e8e8"/>
-                            <stop offset="100%" stop-color="#c0c0c0"/>
+                        <linearGradient id="footer-gradient-bg" x1="50" y1="5" x2="50" y2="95"
+                            gradientUnits="userSpaceOnUse">
+                            <stop offset="0%" stop-color="#e8e8e8" />
+                            <stop offset="100%" stop-color="#c0c0c0" />
                         </linearGradient>
                     </defs>
                 </svg>
@@ -2653,7 +3236,8 @@
 
     <!-- Scroll to Top Button -->
     <button class="scroll-to-top" id="scrollToTop" aria-label="Scroll to top">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round">
             <polyline points="18 15 12 9 6 15"></polyline>
         </svg>
     </button>
@@ -2666,7 +3250,7 @@
         document.getElementById('currentYear').textContent = new Date().getFullYear();
 
         // Navbar scroll effect
-        window.addEventListener('scroll', function() {
+        window.addEventListener('scroll', function () {
             var navbar = document.getElementById('navbar');
             if (window.scrollY > 50) {
                 navbar.classList.add('scrolled');
@@ -2679,10 +3263,10 @@
         var menuToggle = document.getElementById('menuToggle');
         var mobileNav = document.getElementById('mobileNav');
 
-        menuToggle.addEventListener('click', function() {
+        menuToggle.addEventListener('click', function () {
             menuToggle.classList.toggle('active');
             mobileNav.classList.toggle('active');
-            
+
             // Prevent body scroll when menu is open
             if (mobileNav.classList.contains('active')) {
                 document.body.style.overflow = 'hidden';
@@ -2693,8 +3277,8 @@
 
         // Close mobile menu when clicking a link
         var mobileLinks = mobileNav.querySelectorAll('a');
-        mobileLinks.forEach(function(link) {
-            link.addEventListener('click', function() {
+        mobileLinks.forEach(function (link) {
+            link.addEventListener('click', function () {
                 menuToggle.classList.remove('active');
                 mobileNav.classList.remove('active');
                 document.body.style.overflow = '';
@@ -2703,9 +3287,9 @@
 
         // Reveal animations on scroll
         var reveals = document.querySelectorAll('.reveal');
-        
+
         function revealOnScroll() {
-            reveals.forEach(function(element) {
+            reveals.forEach(function (element) {
                 var windowHeight = window.innerHeight;
                 var elementTop = element.getBoundingClientRect().top;
                 var revealPoint = 150;
@@ -2720,8 +3304,8 @@
         window.addEventListener('load', revealOnScroll);
 
         // Smooth scroll for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
-            anchor.addEventListener('click', function(e) {
+        document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
+            anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 var target = document.querySelector(this.getAttribute('href'));
                 if (target) {
@@ -2734,27 +3318,27 @@
         });
 
         // Form submission handler con Web3Forms
-        document.getElementById('contactForm').addEventListener('submit', async function(e) {
+        document.getElementById('contactForm').addEventListener('submit', async function (e) {
             e.preventDefault();
-            
+
             const submitBtn = document.getElementById('submitBtn');
             const btnText = submitBtn.querySelector('.btn-text');
             const formMessage = document.getElementById('formMessage');
             const form = e.target;
-            
+
             // Deshabilitar botón y cambiar texto
             submitBtn.disabled = true;
             btnText.textContent = 'Sending...';
-            
+
             try {
                 const formData = new FormData(form);
                 const response = await fetch('https://api.web3forms.com/submit', {
                     method: 'POST',
                     body: formData
                 });
-                
+
                 const data = await response.json();
-                
+
                 if (data.success) {
                     // Mostrar mensaje de éxito
                     formMessage.style.display = 'block';
@@ -2762,16 +3346,16 @@
                     formMessage.style.border = '1px solid rgba(0, 255, 136, 0.3)';
                     formMessage.style.color = '#00ff88';
                     formMessage.textContent = 'Thank you! Your message has been sent successfully. We\'ll get back to you soon.';
-                    
+
                     // Limpiar formulario
                     form.reset();
-                    
+
                     // Restaurar botón
                     setTimeout(() => {
                         btnText.textContent = 'Get Your Quote';
                         submitBtn.disabled = false;
                     }, 2000);
-                    
+
                     // Ocultar mensaje después de 5 segundos
                     setTimeout(() => {
                         formMessage.style.display = 'none';
@@ -2786,11 +3370,11 @@
                 formMessage.style.border = '1px solid rgba(255, 95, 86, 0.3)';
                 formMessage.style.color = '#ff5f56';
                 formMessage.textContent = 'Oops! Something went wrong. Please try again or contact us directly at info@bbxdevs.com';
-                
+
                 // Restaurar botón
                 btnText.textContent = 'Get Your Quote';
                 submitBtn.disabled = false;
-                
+
                 // Ocultar mensaje después de 5 segundos
                 setTimeout(() => {
                     formMessage.style.display = 'none';
@@ -2801,17 +3385,17 @@
         // Counter animation for stats
         function animateCounters() {
             var counters = document.querySelectorAll('.stat-number');
-            
-            counters.forEach(function(counter) {
+
+            counters.forEach(function (counter) {
                 var target = counter.innerText;
                 var hasPlus = target.includes('+');
                 var hasPercent = target.includes('%');
                 var numericValue = parseInt(target.replace(/[^0-9]/g, ''));
-                
+
                 var current = 0;
                 var increment = numericValue / 50;
                 var stepTime = 40;
-                
+
                 function updateCounter() {
                     current += increment;
                     if (current < numericValue) {
@@ -2821,16 +3405,16 @@
                         counter.innerText = target;
                     }
                 }
-                
-                var observer = new IntersectionObserver(function(entries) {
-                    entries.forEach(function(entry) {
+
+                var observer = new IntersectionObserver(function (entries) {
+                    entries.forEach(function (entry) {
                         if (entry.isIntersecting) {
                             updateCounter();
                             observer.unobserve(entry.target);
                         }
                     });
                 }, { threshold: 0.5 });
-                
+
                 observer.observe(counter);
             });
         }
@@ -2841,7 +3425,7 @@
         var scrollToTopBtn = document.getElementById('scrollToTop');
 
         // Show/hide button based on scroll position
-        window.addEventListener('scroll', function() {
+        window.addEventListener('scroll', function () {
             if (window.pageYOffset > 300) {
                 scrollToTopBtn.classList.add('visible');
             } else {
@@ -2850,7 +3434,7 @@
         });
 
         // Scroll to top when clicked
-        scrollToTopBtn.addEventListener('click', function() {
+        scrollToTopBtn.addEventListener('click', function () {
             window.scrollTo({
                 top: 0,
                 behavior: 'smooth'
@@ -2867,11 +3451,11 @@
 
         function updateTestimonials(newIndex) {
             // Remove all classes
-            testimonialCards.forEach(function(card) {
+            testimonialCards.forEach(function (card) {
                 card.classList.remove('active', 'prev', 'next', 'hidden');
             });
 
-            testimonialDots.forEach(function(dot) {
+            testimonialDots.forEach(function (dot) {
                 dot.classList.remove('active');
             });
 
@@ -2885,7 +3469,7 @@
             testimonialCards[nextIndex].classList.add('next');
 
             // Hide others
-            testimonialCards.forEach(function(card, index) {
+            testimonialCards.forEach(function (card, index) {
                 if (index !== newIndex && index !== prevIndex && index !== nextIndex) {
                     card.classList.add('hidden');
                 }
@@ -2898,29 +3482,29 @@
         }
 
         // Navigation buttons
-        prevBtn.addEventListener('click', function() {
+        prevBtn.addEventListener('click', function () {
             var newIndex = (currentIndex - 1 + totalTestimonials) % totalTestimonials;
             updateTestimonials(newIndex);
         });
 
-        nextBtn.addEventListener('click', function() {
+        nextBtn.addEventListener('click', function () {
             var newIndex = (currentIndex + 1) % totalTestimonials;
             updateTestimonials(newIndex);
         });
 
         // Dots navigation
-        testimonialDots.forEach(function(dot) {
-            dot.addEventListener('click', function() {
+        testimonialDots.forEach(function (dot) {
+            dot.addEventListener('click', function () {
                 var index = parseInt(this.getAttribute('data-index'));
                 updateTestimonials(index);
             });
         });
 
         // Click on cards to navigate
-        testimonialCards.forEach(function(card) {
-            card.addEventListener('click', function() {
+        testimonialCards.forEach(function (card) {
+            card.addEventListener('click', function () {
                 var clickedIndex = parseInt(this.getAttribute('data-index'));
-                
+
                 // If clicking on prev or next card, go directly to it
                 if (this.classList.contains('next') || this.classList.contains('prev')) {
                     updateTestimonials(clickedIndex);
@@ -2934,7 +3518,7 @@
         // Auto-play (optional)
         var autoplayInterval;
         function startAutoplay() {
-            autoplayInterval = setInterval(function() {
+            autoplayInterval = setInterval(function () {
                 nextBtn.click();
             }, 5000);
         }
@@ -2952,7 +3536,7 @@
         testimonialSlider.addEventListener('mouseleave', startAutoplay);
 
         // Keyboard navigation
-        document.addEventListener('keydown', function(e) {
+        document.addEventListener('keydown', function (e) {
             if (e.key === 'ArrowLeft') {
                 prevBtn.click();
             } else if (e.key === 'ArrowRight') {
@@ -2964,17 +3548,17 @@
         var caseTabs = document.querySelectorAll('.case-tab');
         var caseContents = document.querySelectorAll('.case-content');
 
-        caseTabs.forEach(function(tab) {
-            tab.addEventListener('click', function() {
+        caseTabs.forEach(function (tab) {
+            tab.addEventListener('click', function () {
                 var caseIndex = this.getAttribute('data-case');
 
                 // Remove active from all tabs
-                caseTabs.forEach(function(t) {
+                caseTabs.forEach(function (t) {
                     t.classList.remove('active');
                 });
 
                 // Remove active from all contents
-                caseContents.forEach(function(content) {
+                caseContents.forEach(function (content) {
                     content.classList.remove('active');
                 });
 
@@ -3006,7 +3590,7 @@
         }
 
         // Update mouse position
-        document.addEventListener('mousemove', function(e) {
+        document.addEventListener('mousemove', function (e) {
             mouseX = e.clientX;
             mouseY = e.clientY;
         });
@@ -3016,7 +3600,7 @@
             // Smooth cursor movement
             cursorX += (mouseX - cursorX) * 0.2;
             cursorY += (mouseY - cursorY) * 0.2;
-            
+
             customCursor.style.left = cursorX + 'px';
             customCursor.style.top = cursorY + 'px';
 
@@ -3025,12 +3609,12 @@
                 trails[i].x = trails[i - 1].x;
                 trails[i].y = trails[i - 1].y;
             }
-            
+
             trails[0].x += (cursorX - trails[0].x) * 0.15;
             trails[0].y += (cursorY - trails[0].y) * 0.15;
 
             // Apply trail positions with delay effect
-            trails.forEach(function(trail, index) {
+            trails.forEach(function (trail, index) {
                 var opacity = 1 - (index / trails.length);
                 var scale = 1 - (index / trails.length) * 0.5;
                 trail.element.style.left = trail.x + 'px';
@@ -3047,28 +3631,82 @@
 
         // Detect hoverable elements
         var hoverElements = document.querySelectorAll('a, button, .service-card, .testimonial-card, input, textarea, .nav-links a, .btn-primary, .btn-secondary');
-        
-        hoverElements.forEach(function(element) {
-            element.addEventListener('mouseenter', function() {
+
+        hoverElements.forEach(function (element) {
+            element.addEventListener('mouseenter', function () {
                 customCursor.classList.add('hover');
             });
-            
-            element.addEventListener('mouseleave', function() {
+
+            element.addEventListener('mouseleave', function () {
                 customCursor.classList.remove('hover');
             });
         });
 
         // Hide cursor when leaving window
-        document.addEventListener('mouseleave', function() {
+        document.addEventListener('mouseleave', function () {
             customCursor.style.opacity = '0';
-            trails.forEach(function(trail) {
+            trails.forEach(function (trail) {
                 trail.element.style.opacity = '0';
             });
         });
 
-        document.addEventListener('mouseenter', function() {
+        document.addEventListener('mouseenter', function () {
             customCursor.style.opacity = '1';
         });
+
+        // Logo Carousel with Scroll Control
+        var logoCarousel = document.getElementById('logoCarousel');
+        var logoCarouselSection = document.querySelector('.logo-carousel');
+        var carouselPosition = 0;
+        var lastScrollY = window.scrollY;
+        var isInView = false;
+
+        // Duplicate logos for seamless infinite scroll
+        var logoItems = logoCarousel.querySelectorAll('.logo-item');
+        var totalWidth = 0;
+        logoItems.forEach(function (item) {
+            totalWidth += item.offsetWidth + 64; // 64px is the gap (4rem)
+        });
+
+        // Check if carousel is in viewport
+        function checkCarouselInView() {
+            var rect = logoCarouselSection.getBoundingClientRect();
+            var windowHeight = window.innerHeight;
+            isInView = rect.top < windowHeight && rect.bottom > 0;
+        }
+
+        // Update carousel position based on scroll
+        function updateCarouselPosition() {
+            checkCarouselInView();
+
+            if (isInView) {
+                var currentScrollY = window.scrollY;
+                var scrollDelta = currentScrollY - lastScrollY;
+
+                // Move carousel based on scroll direction
+                // Scrolling down (positive delta) moves carousel left (negative position)
+                // Scrolling up (negative delta) moves carousel right (positive position)
+                carouselPosition -= scrollDelta * 0.5; // 0.5 is the speed multiplier
+
+                // Reset position for infinite loop
+                var halfWidth = totalWidth / 2;
+                if (carouselPosition <= -halfWidth) {
+                    carouselPosition += halfWidth;
+                } else if (carouselPosition > 0) {
+                    carouselPosition -= halfWidth;
+                }
+
+                logoCarousel.style.transform = 'translateX(' + carouselPosition + 'px)';
+                lastScrollY = currentScrollY;
+            }
+        }
+
+        // Listen to scroll event
+        window.addEventListener('scroll', updateCarouselPosition);
+
+        // Initialize
+        checkCarouselInView();
     </script>
 </body>
+
 </html>
